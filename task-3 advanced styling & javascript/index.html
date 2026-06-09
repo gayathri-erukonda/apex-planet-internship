@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NovaLearn</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <h1>NovaLearn</h1>
+    <p class="tagline">Learn • Interact • Laugh</p>
+
+    <!-- QUIZ SECTION -->
+    <div class="card quiz-card">
+      <h2>Frontend Quiz</h2>
+
+      <p id="question"></p>
+      <div id="options"></div>
+
+      <button class="submit-btn" onclick="submitAnswer()">Submit Answer</button>
+      <p id="result"></p>
+
+      <button class="next-btn" onclick="nextQuestion()">Next Question</button>
+    </div>
+
+    <!-- JOKES SECTION -->
+    <div class="card joke-card">
+      <h2>Funny Jokes 😂</h2>
+      <button class="joke-btn" onclick="getJoke()">Get Joke</button>
+      <p id="joke"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+

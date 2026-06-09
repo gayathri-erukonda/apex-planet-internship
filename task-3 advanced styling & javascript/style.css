@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #c7d2fe, #fce7f3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 420px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 4px;
+  color: #1f2937;
+}
+
+.tagline {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+.card {
+  padding: 22px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* QUIZ CARD */
+.quiz-card {
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  border-left: 5px solid #6366f1;
+}
+
+/* JOKE CARD */
+.joke-card {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  border-left: 5px solid #22c55e;
+}
+
+/* BUTTONS */
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+}
+
+/* OPTION BUTTONS */
+#options button {
+  background: linear-gradient(135deg, #818cf8, #6366f1);
+}
+
+/* SUBMIT */
+.submit-btn {
+  background: linear-gradient(135deg, #fb7185, #f43f5e);
+}
+
+/* NEXT */
+.next-btn {
+  background: linear-gradient(135deg, #34d399, #10b981);
+}
+
+/* JOKE BUTTON */
+.joke-btn {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+#result {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+#joke {
+  margin-top: 12px;
+  font-style: italic;
+  color: #065f46;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
+
+
+
