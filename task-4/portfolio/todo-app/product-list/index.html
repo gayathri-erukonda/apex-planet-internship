@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clothing Store</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fceabb, #f8b5c2, #cfd9df);
+      background-size: 300% 300%;
+      animation: gradientMove 10s ease infinite;
+      padding: 50px 20px;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #3a3a3a;
+      font-weight: 600;
+      font-size: 2.4rem;
+    }
+
+    /* CONTROLS */
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    select {
+      padding: 12px 18px;
+      border-radius: 30px;
+      border: none;
+      outline: none;
+      font-size: 0.95rem;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      cursor: pointer;
+    }
+
+    /* PRODUCTS GRID */
+    .products {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    /* PRODUCT CARD */
+    .product {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(12px);
+      padding: 25px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+    }
+
+    .product h3 {
+      margin-bottom: 8px;
+      color: #444;
+      font-size: 1.15rem;
+    }
+
+    .category {
+      font-size: 0.85rem;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #e75480;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>👗  Clothing Store</h1>
+
+  <div class="controls">
+    <select onchange="filterProducts(this.value)">
+      <option value="all">All Categories</option>
+      <option value="tops">Tops</option>
+      <option value="jeans">Jeans</option>
+      <option value="dresses">Dresses</option>
+    </select>
+
+    <select onchange="sortProducts(this.value)">
+      <option value="">Sort by Price</option>
+      <option value="low">Low → High</option>
+      <option value="high">High → Low</option>
+    </select>
+  </div>
+
+  <div class="products" id="productList">
+
+    <div class="product" data-category="tops" data-price="999">
+      <h3>Casual Top</h3>
+      <p class="category">Tops</p>
+      <p class="price">₹999</p>
+    </div>
+
+    <div class="product" data-category="jeans" data-price="1499">
+      <h3>Blue Denim Jeans</h3>
+      <p class="category">Jeans</p>
+      <p class="price">₹1,499</p>
+    </div>
+
+    <div class="product" data-category="dresses" data-price="1999">
+      <h3>Floral Dress</h3>
+      <p class="category">Dresses</p>
+      <p class="price">₹1,999</p>
+    </div>
+
+    <div class="product" data-category="tops" data-price="1299">
+      <h3>Formal Shirt</h3>
+      <p class="category">Tops</p>
+      <p class="price">₹1,299</p>
+    </div>
+
+    <div class="product" data-category="jeans" data-price="1799">
+      <h3>Black Skinny Jeans</h3>
+      <p class="category">Jeans</p>
+      <p class="price">₹1,799</p>
+    </div>
+
+    <div class="product" data-category="dresses" data-price="2499">
+      <h3>Evening Gown</h3>
+      <p class="category">Dresses</p>
+      <p class="price">₹2,499</p>
+    </div>
+
+  </div>
+
+  <script>
+    function filterProducts(category) {
+      let products = document.querySelectorAll(".product");
+      products.forEach(product => {
+        product.style.display =
+          category === "all" || product.dataset.category === category
+          ? "block" : "none";
+      });
+    }
+
+    function sortProducts(order) {
+      let container = document.getElementById("productList");
+      let products = Array.from(container.children);
+      if (order === "") return;
+
+      products.sort((a, b) => {
+        let aPrice = parseInt(a.dataset.price);
+        let bPrice = parseInt(b.dataset.price);
+        return order === "low" ? aPrice - bPrice : bPrice - aPrice;
+      });
+
+      products.forEach(p => container.appendChild(p));
+    }
+  </script>
+
+</body>
+</html>
