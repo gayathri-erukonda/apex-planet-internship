@@ -1,0 +1,125 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f3e7ff, #ffe9e3);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main Card */
+.container {
+  width: 100%;
+  max-width: 420px;
+  background: #fffaf7;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  color: #6a4c93;
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #9a8fbf;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+h2 {
+  color: #444;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+/* Inputs */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #e0d7f3;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: #b388eb;
+  box-shadow: 0 0 8px rgba(179,136,235,0.35);
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #b388eb, #f6a6b2);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+}
+
+/* Divider */
+hr {
+  margin: 28px 0;
+  border: none;
+  height: 1px;
+  background: #f0e6ff;
+}
+
+/* To-do list */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f7f0ff;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #5e548e;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+li:hover {
+  background: #e9ddff;
+  transform: scale(1.02);
+}
+
+/* Inline Popup */
+#popup {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Success popup */
+.popup-success {
+  background: #ede7f6;
+  color: #6a4c93;
+  border: 1px solid #d1c4e9;
+}
+
+/* Error popup */
+.popup-error {
+  background: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6cb;
+}

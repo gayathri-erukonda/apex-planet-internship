@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AuraConnect – Contact Web Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>AuraConnect</h1>
+    <p class="subtitle">A calm & simple way to connect</p>
+
+    <h2>Contact Form</h2>
+
+    <form id="contactForm">
+
+      <input type="text" id="name" placeholder="Your Name">
+
+      <input type="email" id="email" placeholder="Your Email">
+
+      <textarea id="message" placeholder="Your Message"></textarea>
+
+      <button type="submit">Send Message</button>
+
+      <!-- Inline popup message -->
+      <div id="popup"></div>
+
+    </form>
+
+    <hr>
+
+    <h2>My To-Do List</h2>
+
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
